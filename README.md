@@ -9,7 +9,7 @@ ____________________________________________________
 ### Web Scraped Data: 
 * [KVUE Allergy Calendar](https://kvue.com/allergy)
 
-### API Pull: 
+### API Pull => csv download (historical is not free)
 * [OpenWeatherAPI](https://openweathermap.org/api)
 
 ## What Transformations:
@@ -20,7 +20,7 @@ ____________________________________________________
 * Transformed & cleaned in Pandas
 
 ### Open Weather Data: 
-* Pull ATX data for 2019 
+* Pull csv ATX data for 2019 
 * dates 
 * temps
 * pressure
