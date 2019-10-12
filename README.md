@@ -32,5 +32,5 @@ ____________________________________________________
 
 
 
-##Where is data going to be loaded:
+## Where is data going to be loaded:
 * postgres database because the  dataset is long and narrow and sql db are better for this shape.
