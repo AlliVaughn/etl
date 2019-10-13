@@ -29,7 +29,14 @@ ____________________________________________________
 * others as necessary
 * Transformed & cleaned in Pandas
 
-
+## KVUE Scraping Process
+* Each monthly allergen calendar was exported to PDF and then saved as HTML
+* For each file, we then used Beautiful Soup to scrap the data.
+    * Pull Month and Year from the page
+    * Each calendar is a table with (generally) each td tag reprsenting a day
+    * Loop through reach td tag and establish if this a day for the month be looking for appropriate data
+    * If established is a day for the month, then add day to dictionary with allergens (if any)
+* Once each file had been scraped, we saved the list of dictionary as a .csv file for data processing in pandas
 
 
 ## Where is data going to be loaded:
