@@ -1,0 +1,56 @@
+ID,Main,Description
+781,Tornado,tornado
+731,Dust,sand/ dust whirls
+701,Mist,mist
+721,Haze,Haze
+711,Smoke,Smoke
+741,Fog,fog
+751,Sand,sand
+761,Dust,dust
+762,Ash,volcanic ash
+771,Squall,squalls
+612,Snow,Light shower sleet
+600,Snow,light snow
+601,Snow,Snow
+602,Snow,Heavy snow
+611,Snow,Sleet
+621,Snow,Shower snow
+613,Snow,Shower sleet
+615,Snow,Light rain and snow
+616,Snow,Rain and snow
+620,Snow,Light shower snow
+622,Snow,Heavy shower snow
+511,Rain,freezing rain
+201,Thunderstorm,thunderstorm with rain
+200,Thunderstorm,thunderstorm with light rain
+202,Thunderstorm,thunderstorm with heavy rain
+210,Thunderstorm,light thunderstorm
+211,Thunderstorm,thunderstorm
+212,Thunderstorm,heavy thunderstorm
+221,Thunderstorm,ragged thunderstorm
+230,Thunderstorm,thunderstorm with light drizzle
+231,Thunderstorm,thunderstorm with drizzle
+232,Thunderstorm,thunderstorm with heavy drizzle
+502,Rain,heavy intensity rain
+503,Rain,very heavy rain
+504,Rain,extreme rain
+501,Rain,moderate rain
+500,Rain,light rain
+300,Drizzle,light intensity drizzle
+301,Drizzle,drizzle
+520,Rain,light intensity shower rain
+521,Rain,shower rain
+522,Rain,heavy intensity shower rain
+531,Rain,ragged shower rain
+313,Drizzle,shower rain and drizzle
+302,Drizzle,heavy intensity drizzle
+310,Drizzle,light intensity drizzle rain
+311,Drizzle,drizzle rain
+312,Drizzle,heavy intensity drizzle rain
+314,Drizzle,heavy shower rain and drizzle
+321,Drizzle,shower drizzle
+803,Clouds,broken clouds: 51-84%
+804,Clouds,overcast clouds: 85-100%
+802,Clouds,scattered clouds: 25-50%
+801,Clouds,few clouds: 11-25%
+800,Clear,clear sky

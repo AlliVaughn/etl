@@ -1,0 +1,6 @@
+Parameter,Description,Standard,Metric,Imperial
+id,City identification,-,-,-
+dt,Data receiving time,"unix, UTC","unix, UTC","unix, UTC"
+name,City name,-,-,-
+coord,coord,coord,coord,coord
+lat,"City geo location, latitude",-,-,-
