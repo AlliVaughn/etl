@@ -1,4 +1,3 @@
-
 # ETL Project Plan: A-Choose Your Best Weather
 ## Team : Alli Vaughn, Amy Koldeway, Sarah Cross
 
@@ -50,7 +49,7 @@
 
 * For each file, we then used Beautiful Soup to scrap the data.
     * Pull Month and Year from the page
-    * Each calendar is a table with (generally) each td tag reprsenting a day
+    * Each calendar is a table with (generally) each td tag representing a day
     * Loop through reach td tag and establish if this a day for the month be looking for appropriate data
     * If established is a day for the month, then add day to dictionary with allergens (if any)
 * Load dictionary into pandas dataframe
@@ -62,7 +61,7 @@ Raw Data Frame
 Cleaned, Formatted CSV
 ![kuve_daily_allergens](kvue_daily_allergens.png)
 
-With that information in hand, we wanted to parse the allergen data.  Some days have multiple values (seperated by commas) and the each allergen generally had a severity (High, Medium, Low) and some had a measurement in gr/m3. 
+With that information in hand, we wanted to parse the allergen data.  Some days have multiple values (separated by commas) and then each allergen generally had a severity (High, Medium, Low) and some had a measurement in gr/m3. 
 * Loop through each day and parse the allergen data with a function to parse our individual allergens. Create new dataframe for each allergen found.
 * Export parsed allergen data to CSV
 
@@ -74,7 +73,7 @@ Parsed Allergen CSV
 
 * 7 years of weather data for the city of Austin was downloaded from Open Weather Map as a csv file, rather than the planned API pull, as we could only get the  current weather for free that way.  
 
-* Weather ID codes and standard untis for the csv files were also scrapped with Pandas from Open Weather Map site
+* Weather ID codes and standard units for the csv files were also scrapped with Pandas from Open Weather Map site
 
     ![hourly_weather](https://raw.githubusercontent.com/AlliVaughn/etl/master/hourly_weather.png)
     * Weather Data was transformed by:
@@ -88,8 +87,8 @@ Parsed Allergen CSV
     ![weather_type](https://raw.githubusercontent.com/AlliVaughn/etl/master/weather_type.png)
     * Weather ID data was transformed by: 
         * Reading all tables on the page
-        * Checking ofr consitent headers
-        * Renaming headers so all tables can be concatinated for cross referencing
+        * Checking for consistent headers
+        * Renaming headers so all tables can be concatenated for cross referencing
         * exported to csv
 
      ![units](https://raw.githubusercontent.com/AlliVaughn/etl/master/units.png)   
