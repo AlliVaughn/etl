@@ -15,7 +15,7 @@
 
 ## Transformation:  What Transformations? 
 ### KVUE:
-* Scrape Monthly Allergy Calendar data as PDFs 
+* Save Monthly Allergy Calendar data as PDFs 
 * Save each calendar as HTML
 * Read each HTML file to get date and allergens
 * Transformed & cleaned in Pandas
@@ -44,16 +44,31 @@
 # Extract & Transform 
 
 ## KVUE Scraping Process
-* Each monthly allergen calendar was exported to PDF and then saved as HTML
+* Each monthly allergen calendar was manually exported to PDF and then saved as HTML
+
+![january_html_calendar_example](january_html_calendar_sample.png)
+
 * For each file, we then used Beautiful Soup to scrap the data.
     * Pull Month and Year from the page
     * Each calendar is a table with (generally) each td tag reprsenting a day
     * Loop through reach td tag and establish if this a day for the month be looking for appropriate data
     * If established is a day for the month, then add day to dictionary with allergens (if any)
-    * Create DATE column from Month, Day and Year values
-* Clean the daily allergen data and export to CSV
-* Loop through each day and parse the allergen data (comma delimited list) individual allergens. Create new dataframe for each allergen found.
+* Load dictionary into pandas dataframe
+* Clean allergen data and create a DATE column for Month, Day and Year values.  Export to CSV.
+
+Raw Data Frame
+![daily_allergen_raw_dataframe](daily_allergen_raw_dataframe.png)
+
+Cleaned, Formatted CSV
+![kuve_daily_allergens](kvue_daily_allergens.png)
+
+With that information in hand, we wanted to parse the allergen data.  Some days have multiple values (seperated by commas) and the each allergen generally had a severity (High, Medium, Low) and some had a measurement in gr/m3. 
+* Loop through each day and parse the allergen data with a function to parse our individual allergens. Create new dataframe for each allergen found.
 * Export parsed allergen data to CSV
+
+Parsed Allergen CSV
+![kvue_daily_allergen_speciated](kvue_daily_allergen_speciated.png)
+
 
 ## Weather Scraping Process
 
@@ -92,13 +107,16 @@
 
 ![weather_db](https://raw.githubusercontent.com/AlliVaughn/etl/master/weather_db.png)   
 
+![daily_allergen_table](daily_allergen_table.png)   
 
 
-## Queries
+## Potential Queries
 * Find the median weather ID per day and relate to weather_id key from Weather ID table.
 * Find the avg temp, pressure, precipitation values for each day from the Weather Table  (24 hours total) (weather table data comes in 1 hr increments).
 * Join munged data from weather table (avg values) and allergen table on date.
 * Query results based on specific allergen or level assignment (low, medium, high).
+* See if there's any correlation between allergens and weather/weather events.
+* With more daily allergen info, could identify allergen trends year over year.
 
 ## Data Cleaning Issues
 * Allergen data was provided in a non-uniform format from the original data source.
