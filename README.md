@@ -70,7 +70,7 @@
         * Reformatted date from UTC to YYYY-MM-DD format
         * exported to csv
         
-    ![weather_id](https://raw.githubusercontent.com/AlliVaughn/etl/master/weather_id.png)
+    ![weather_type](https://raw.githubusercontent.com/AlliVaughn/etl/master/weather_id.png)
     * Weather ID data was transformed by: 
         * Reading all tables on the page
         * Checking ofr consitent headers
