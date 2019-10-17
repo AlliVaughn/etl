@@ -33,10 +33,10 @@
 * Transformed & cleaned in Pandas
 * output to csv
 
-## Load:  How and where will you load the data?  
+## Load: How and where will you load the data?  
 ### PostgreSQL: 
 * weather data - three tables with a foreign key and a join  
-* allergens - x tables with x foreign keys and x joins 
+* allergens - two tables
 
 
 # Project Reality : 
@@ -56,25 +56,41 @@
 * Export parsed allergen data to CSV
 
 ## Weather Scraping Process
-* 7 years of weather data for the city of Austin was downloaded from Open Weather Map as a csv file, rather than teh planned API pull, as we could only get the  current weather for free that way.  
+
+* 7 years of weather data for the city of Austin was downloaded from Open Weather Map as a csv file, rather than the planned API pull, as we could only get the  current weather for free that way.  
+
 * Weather ID codes and standard untis for the csv files were also scrapped with Pandas from Open Weather Map site
+
+    ![hourly_weather](https://raw.githubusercontent.com/AlliVaughn/etl/master/hourly_weather.png)
     * Weather Data was transformed by:
         * Dropped columns not being used
         * Renamed columns to include units
-        * Added in City and Lat/Long info for every row and this was not included in the scv file.
+        * Added in City and Lat/Long info for every row and this was not included in the csv file.
         * Calculated temps, pressure and precipitation in imperial units
         * Reformatted date from UTC to YYYY-MM-DD format
+        * exported to csv
+        
+    ![weather_id](https://raw.githubusercontent.com/AlliVaughn/etl/master/weather_id.png)
     * Weather ID data was transformed by: 
         * Reading all tables on the page
         * Checking ofr consitent headers
-        * Renaming headers so all tables can be concatinate together for cross referenceing
-    * Units data was read via Pandas to a table for reference only, not intended for futher data transformation.
+        * Renaming headers so all tables can be concatinated for cross referencing
+        * exported to csv
+
+     ![units](https://raw.githubusercontent.com/AlliVaughn/etl/master/units.png)   
+    * Units data was transformed by:
+     	* being read via Pandas to a table
+     	* reference table only
+
+    
 
 # Load
 
 ## Where is data going to be loaded
 * Load to pgAdmin postgres database because the dataset is long and narrow and sql db are better for this shape.
 * Data can also be joined on date between datasets and foreign keys; therefore, a relational database will work best for our data.
+
+![weather_db](https://raw.githubusercontent.com/AlliVaughn/etl/master/weather_db.png)   
 
 
 
