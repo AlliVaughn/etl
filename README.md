@@ -16,10 +16,11 @@
 ## Transformation:  What Transformations? 
 ### KVUE:
 * Scrape Monthly Allergy Calendar data as PDFs 
-* save each to html
-* Saved to csv 
+* Save each calendar as HTML
+* Read each HTML file to get date and allergens
 * Transformed & cleaned in Pandas
-* output to csv
+    * Second dataframe of each allergen found by day created
+* Output to csv
 
 ### Open Weather Data: 
 * Pull csv ATX data for 2019 
@@ -49,7 +50,10 @@
     * Each calendar is a table with (generally) each td tag reprsenting a day
     * Loop through reach td tag and establish if this a day for the month be looking for appropriate data
     * If established is a day for the month, then add day to dictionary with allergens (if any)
-* Once each file had been scraped, we saved the list of dictionary as a .csv file for data processing in pandas
+    * Create DATE column from Month, Day and Year values
+* Clean the daily allergen data and export to CSV
+* Loop through each day and parse the allergen data (comma delimited list) individual allergens. Create new dataframe for each allergen found.
+* Export parsed allergen data to CSV
 
 ## Weather Scraping Process
 * 7 years of weather data for the city of Austin was downloaded from Open Weather Map as a csv file, rather than teh planned API pull, as we could only get the  current weather for free that way.  
@@ -82,8 +86,8 @@
 
 ## Data Cleaning Issues
 * Allergen data was provided in a non-uniform format from the original data source.
-Dates, descriptions and values were not located at the same level of tables in the HTML files.
-Some allergen data had descriptions only and no values and vice versa. 
+* Dates, descriptions and values were not located at the same level of tables in the HTML files.
+* Some allergen data had descriptions only and no values and vice versa. 
 Parsing the data into common formats was difficult due to all of the exception cases.
 
 

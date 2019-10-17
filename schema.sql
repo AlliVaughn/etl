@@ -51,3 +51,25 @@ CREATE TABLE "Unit" (
 ALTER TABLE "Hourly_Weather" ADD CONSTRAINT "fk_Hourly_Weather_weather_type_id" FOREIGN KEY("weather_type_id")
 REFERENCES "Weather_Type" ("weather_type_id");
 
+CREATE TABLE "Daily_Allergen" (
+    "daily_allergen_id" SERIAL   NOT NULL,
+    "date" DATE   NULL,
+    "allergens" VARCHAR(255)   NULL,
+    CONSTRAINT "pk_Daily_Allergen" PRIMARY KEY (
+        "daily_allergen_id"
+     ),
+    CONSTRAINT "uc_Daily_Allergen_date" UNIQUE (
+        "date"
+    )
+);
+
+CREATE TABLE "Daily_Allergen_Speciated" (
+    "daily_allergen_speciated" SERIAL   NOT NULL,
+    "date" Date   NOT NULL,
+    "allergen" VARCHAR(25)   NULL,
+    "severity" VARCHAR(25)   NULL,
+    "measure" VARCHAR(25)   NULL,
+    CONSTRAINT "pk_Daily_Allergen_Speciated" PRIMARY KEY (
+        "daily_allergen_speciated"
+     )
+);
